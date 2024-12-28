@@ -1,0 +1,104 @@
+#### Este arquivo contém testes para avaliar se o seu bot se comporta como esperado.
+#### Se você quer aprender mais, veja a documentação: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+# - story: caminho feliz 1
+#   steps:
+#   - user: |
+#       olá!
+#     intent: saudacao
+#   - action: utter_saudacao
+#   - user: |
+#       incrível
+#     intent: humor_bom
+#   - action: utter_feliz
+
+# - story: caminho feliz 2
+#   steps:
+#   - user: |
+#       olá!
+#     intent: saudacao
+#   - action: utter_saudacao
+#   - user: |
+#       incrível
+#     intent: humor_bom
+#   - action: utter_feliz
+#   - user: |
+#       tchauzinho!
+#     intent: despedida
+#   - action: utter_despedida
+
+# - story: caminho triste 1
+#   steps:
+#   - user: |
+#       olá
+#     intent: saudacao
+#   - action: utter_saudacao
+#   - user: |
+#       não está bom
+#     intent: humor_triste
+#   - action: utter_alegrar
+#   - action: utter_ajudou
+#   - user: |
+#       sim
+#     intent: afirmar
+#   - action: utter_feliz
+
+# - story: caminho triste 2
+#   steps:
+#   - user: |
+#       olá
+#     intent: saudacao
+#   - action: utter_saudacao
+#   - user: |
+#       não está bom
+#     intent: humor_triste
+#   - action: utter_alegrar
+#   - action: utter_ajudou
+#   - user: |
+#       não muito
+#     intent: negar
+#   - action: utter_despedida
+
+# - story: caminho triste 3
+#   steps:
+#   - user: |
+#       oi
+#     intent: saudacao
+#   - action: utter_saudacao
+#   - user: |
+#       muito ruim
+#     intent: humor_triste
+#   - action: utter_alegrar
+#   - action: utter_ajudou
+#   - user: |
+#       não
+#     intent: negar
+#   - action: utter_despedida
+
+- story: dizer tchau
+  steps:
+  - user: |
+      tchauzinho!
+    intent: despedida
+  - action: utter_despedida
+
+# - story: desafio ao bot
+#   steps:
+#   - user: |
+#       você é um robô?
+#     intent: desafio_ao_bot
+#   - action: utter_souumrobo
+
+
+- story: Onboarding
+  steps:
+    - intent: saudacao2
+    - action: user_onboarding_form
+    - active_loop: user_onboarding_form
+    - intent: provide_name
+    - action: user_onboarding_form
+    - intent: provide_age
+    - action: user_onboarding_form
+    - active_loop: null
+    - action: utter_thank_you

@@ -1,0 +1,112 @@
+version: "3.1"
+
+intents:
+  - ask_name
+  - escolha_saudacao
+  - escolha_preferencias
+  - intro_checkup
+  - ask_dor
+  - ask_alimentation
+  - ask_emotion
+  - ir_para_cozinha
+  - emergencia
+  # - despedida
+
+
+entities:
+  - name
+  - saudacao
+  # - atividade
+  - temas
+ 
+
+slots:
+  name:
+    type: text
+    initial_value: null
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: name
+        intent: ask_name
+  saudacao:
+    type: text
+    initial_value: null
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: saudacao
+        intent: escolha_saudacao
+  temas:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: temas
+        intent: escolha_peferencias
+ 
+  
+
+actions:
+  - action_session_start
+  - action_save_name
+  - action_save_saudacao
+  - action_save_preferencias
+  - action_intro_checkup
+  - action_save_pain
+  - action_save_alimentation
+  - action_save_emotion
+  - action_ir_para_cozinha
+  - action_emergencia
+  # - nlu_fallback
+
+responses:
+
+  utter_ask_name:
+    - text: "Como gostaria de ser chamado?"
+
+  utter_confirm_name:
+    - text: "Entendido, {name}! É muito bom te conhecer e fazer parte do seu dia a dia. Agora, me conte como você prefere que eu o cumprimente pela manhã? Por exemplo,
+    posso dizer 'olá, {name}, tudo bem?' ou algo que você goste mais."
+  
+  utter_levar_para_cozinha:
+    - text: "Claro, vou até a cozinha"
+
+  utter_emergencia:
+    - text: "Vamos ligar para o seu contato de emergência! Aguarde um momento."
+
+  # uuter_escolha_saudacao:
+  #   - text: "Como você prefere que eu o cumprimente pela manhã? Por exemplo, posso dizer 'Bom dia, [Nome do idoso]! Como você dormiu?' ou algo que você goste mais."
+
+  utter_confirm_saudacao:
+    - text: "Certo {name}, sua saudação preferida foi salva com sucesso! Durante nossa interação, eu também posso conversar sobre assuntos que você gosta, 
+    e trazer atualizações. Quais são algumas coisas que você gosta de falar e tem interesse?"
+
+  utter_confirm_preferencias:
+    - text: "Obrigado {name}, suas preferências foram salvas com sucesso. Agora estamos prontos, e a etapa de onboarding acabou.
+    Daqui em diante, estarei sempre aqui para ajudar e fazer companhia. Se precisar de algo, basta me chamar."
+#   utter_please_rephrase:
+#     - text: "Desculpa, não entendi. Pode tentar novamente?"
+
+  utter_intro_checkup:
+    - text: "Olá, {name}! Como você está? Estamos chegando ao final do dia, e é hora de fazermos nosso check-up!
+    Lembre-se de que o objetivo desta atividade é ajudar a cuidar do seu bem-estar, então, por favor, seja sincero nas respostas."
+
+  utter_ask_pain:
+    - text: "Durante o dia, você teve algum incômodo, dor ou desconforto? Se sim, quais?"
+  
+  utter_ask_alimentation:
+    - text: "E como estava seu apetite hoje? Sentiu pouca fome, muita, ou algum enjoo?"
+
+  utter_ask_emotion:
+    - text: "Por último, quero saber um pouco sobre como você se sentiu emocionalmente. Qual emoção descreveria melhor o seu dia?"
+
+  utter_end_checkup:
+    - text: "Muito obrigada, {name}! Fico feliz com suas respostas e por sua confiança.
+     Lembre-se, estarei sempre por aqui. Se precisar conversar mais, basta me chamar. "
+  
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,50 @@
+version: "3.1"
+
+stories:
+
+  - story: onboarding
+    steps:
+      - action: action_session_start  # Executa a introdução primeiro
+      - action: action_listen
+
+  - story: onboarding_new_user
+    steps:
+
+      - intent: ask_name  # O usuário fornece seu nome
+      - action: action_save_name  # Salva o nome
+
+  - story: Save saudacao
+    steps:
+    - intent: escolha_saudacao
+    - action: action_save_saudacao
+    # - slot_was_set:
+    #   - saudacao: True  # Só confirma se o slot 'saudacao' foi setado
+
+  - story: Save preferencias
+    steps:
+    - intent: escolha_preferencias
+    - action: action_save_preferencias
+  
+  - story: intro checkup
+    steps:
+    - intent: intro_checkup
+    - action: action_intro_checkup
+  - story: Save dor
+    steps:
+    - intent: ask_dor
+    - action: action_save_pain
+    # - slot_was_set:
+    #   - saudacao: True  # Só confirma se o slot 'saudacao' foi setado
+
+  - story: Save alimentacao
+    steps:
+    - intent: ask_alimentation
+    - action: action_save_alimentation
+    # - slot_was_set:
+  - story: Save emocao
+    steps:
+    - intent: ask_emotion
+    - action: action_save_emotion
+    # - slot_was_set:
+
+

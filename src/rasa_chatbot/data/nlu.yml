@@ -1,0 +1,204 @@
+version: "3.1"
+
+nlu:
+  - intent: ask_name
+    examples: |
+      - Meu nome é [Rafael Oliveira](name)
+      - Eu sou [Fernanda](name)
+      - Pode me chamar de [Tiago](name)
+      - Prefiro ser chamada de [Isabela](name)
+      - Chamo-me [Renato](name)
+      - Meu apelido é [Gustavo](name)
+      - Sou [Tatiane](name)
+      - Me chamam de [Eduardo](name)
+      - Gosto de ser chamada de [Juliana](name)
+      - Me chamo [Júlio César](name)
+
+  - intent: ir_para_cozinha
+    examples: |
+      - me leve para a cozinha
+      - quero ir para a cozinha
+      - vá até a cozinha
+      - vá à cozinha
+      - como eu chego na cozinha?
+      - siga até a cozinha
+
+  - intent: escolha_saudacao
+    examples: |
+      - prefiro que diga [e aí Laura](saudacao)
+      - gostaria de ouvir [como vai Maria](saudacao)
+      - prefiro que fale [oi João tudo bem](saudacao)
+      - quero que diga [e aí Pedro](saudacao)
+      - escolha dizer [olá Dona Clara](saudacao)
+      - diga [oi Dr. Marcos](saudacao) por favor
+      - opte por dizer [oi tudo certo Juliana](saudacao)
+      - prefiro que diga [como está Sr. Paulo](saudacao)
+      - pode falar [bom dia Dona Sofia](saudacao)
+      - diga algo como [oi Luiza como vai](saudacao)
+      - que tal falar [olá Sr. Roberto tudo bem](saudacao)
+      - gostaria que falasse [olá André tudo tranquilo](saudacao)
+      - escolha [oi Camila tudo bom](saudacao)
+      - diga [como vai Sr. João](saudacao)
+      - poderia dizer [como vai Dona Beatriz](saudacao)
+      - pode optar por [olá Gustavo como está você](saudacao)
+      - diga algo educado como [boa tarde Dona Helena tudo certo](saudacao)
+      - sugiro que fale [oi Lucas tudo bem por aí](saudacao)
+      - escolha uma saudação como [bom dia Dr. Henrique como tem passado](saudacao)
+      - prefiro que diga [oi Marcia como vão as coisas](saudacao)
+
+
+
+  - intent: escolha_preferencias
+    examples: |
+      - Eu gosto de [futebol](temas)
+      - Minhas atividades preferidas são [ler](temas) e [correr](temas)
+      - Adoro [cozinhar](temas)
+      - Me interesso por [tecnologia](temas) e [música](temas)
+      - Minhas áreas de interesse são [design](temas) e [automação](temas)
+      - Prefiro atividades como [yoga](temas)
+      - Gosto de [viajar](temas) e [fotografar](temas)
+      - Minhas paixões são [arte](temas) e [teatro](temas)
+      - Eu adoro [esportes](temas) ao ar livre
+      - Costumo praticar [natação](temas) e [ciclismo](temas)
+      - Tenho interesse em [programação](temas) e [dados](temas)
+      - Sou apaixonado por [gastronomia](temas)
+      - Me interesso por [ciência](temas) e [astronomia](temas)
+      - Adoro participar de eventos relacionados a [moda](temas) e [design de interiores](temas)
+      - Gosto de aprender sobre [história](temas) e [filosofia](temas)
+      - Tenho interesse em atividades como [meditação](temas) e [escalada](temas)
+      - Me envolvo em projetos de [sustentabilidade](temas)
+      - Prefiro atividades como [dança](temas) e [pintura](temas)
+      - Sou entusiasta de [robótica](temas) e [inteligência artificial](temas)
+      - Adoro assistir a conteúdos sobre [cinema](temas) e [séries](temas)
+  
+  - intent: intro_checkup
+    examples: |
+      - checkup
+      - começar checkup
+
+  - intent: ask_dor
+    examples: |
+      - estou com dor de cabeça
+      - eu senti dor nas costas
+      - eu tive enxaqueca
+      - fiquei com dor no peito pela manhã
+      - estou sentindo dor abdominal
+      - tenho uma dor forte na perna
+      - estou com dor nos ombros
+      - sinto uma dor leve no joelho
+      - acordei com dor na lombar
+      - ontem à noite tive dor de dente
+      - agora estou com dor nas articulações
+      - sinto uma dor aguda no abdômen
+      - tive uma dor intensa no braço
+      - estou com dor de garganta
+      - sinto dor crônica nas costas
+      - percebi uma dor no tornozelo
+      - estou com uma dor pulsante na cabeça
+      - estou sentindo dor muscular depois do exercício
+
+  - intent: ask_alimentation
+    examples: |
+      - minha alimentação hoje foi boa
+      - eu comi de forma saudável hoje
+      - minha dieta foi equilibrada hoje
+      - eu me alimentei bem
+      - tive uma boa refeição durante o dia
+      - comi bastante fruta e vegetais
+      - minha alimentação hoje foi ruim
+      - acabei comendo muita besteira hoje
+      - eu exagerei na alimentação hoje
+      - não comi direito hoje
+      - pulei algumas refeições hoje
+      - comi de forma desregulada
+      - tomei um café da manhã reforçado
+      - almocei bem, mas jantei mal
+      - fiz todas as refeições corretamente hoje
+      - minha alimentação foi leve e balanceada
+      - comi muito carboidrato hoje
+      - tive uma alimentação rica em proteínas
+      - estou satisfeito com o que comi hoje
+      - acho que minha alimentação deixou a desejar
+
+  - intent: ask_emotion
+    examples: |
+      - hoje me senti feliz
+      - estou triste hoje
+      - fiquei muito ansioso durante o dia
+      - tive um dia calmo e tranquilo
+      - me senti estressado com o trabalho
+      - estou muito animado hoje
+      - tive um dia bem cansativo
+      - me senti frustrado com algumas coisas
+      - fiquei contente com o que aconteceu hoje
+      - tive um dia cheio de emoções
+      - me senti sozinho e desanimado
+      - estou grato pelo dia de hoje
+      - tive momentos de raiva hoje
+      - fiquei preocupado com algumas situações
+      - hoje me senti mais motivado
+      - me senti aliviado depois da reunião
+      - estou desapontado com o que aconteceu
+      - tive um dia muito estressante
+      - fiquei bastante entediado durante o dia
+      - me senti realizado com as conquistas de hoje
+
+
+  - intent: emergencia
+    examples: |
+      - preciso de ajuda
+      - estou em perigo
+      - me ajude
+      - socorro
+      - estou passando mal
+      - me ajuda por favor
+      - ligue para o meu contato de emergência
+      - preciso de ajuda médica
+      - liga para o meu médico
+      - me ajude agora
+      - ligue para a minha família
+      - ligue para a minha filha
+      - ligue para o meu filho
+      - ligue para o meu neto
+      - ligue para a minha neta
+      - ligue para o meu vizinho
+      - ligue para o meu amigo
+      - ligue para o meu parente
+      - ligue para o 
+
+  - lookup: temas
+    examples: |
+      - futebol
+      - música
+      - tecnologia
+      - artes
+      - design
+      - automação
+
+  - lookup: name
+    examples: |
+      - João
+      - Maria
+      - Carlos
+      - Ana
+      - Lucas
+      - Rodrigo
+      - Luiza
+      - Alberto
+      - Pietra
+      - Rafael Oliveira
+      - Fernanda
+      - Tiago
+      - Isabela
+      - Renato
+      - Gustavo
+      - Tatiane
+      - Eduardo
+      - Juliana
+      - Júlio César
+
+      
+
+
+
+ 

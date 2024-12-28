@@ -1,0 +1,72 @@
+version: "3.1"
+
+rules:
+
+
+  # - rule: Fallback handling
+  #   steps:
+  #     - intent: nlu_fallback
+
+  - rule: Onboarding
+    steps:
+      - action: action_session_start
+      # - action: action_listen 
+
+  - rule: Save name
+    steps:
+      - intent: ask_name  # Espera a intenção 'ask_name'
+      - action: action_save_name  # Executa a ação de salvar o nome
+      - slot_was_set:
+        - name: True  # Só confirma se o slot 'name' foi setado
+      # - action: action_listen 
+
+  - rule: Save saudacao
+    steps:
+      - intent: escolha_saudacao
+      - action: action_save_saudacao
+      - slot_was_set:
+        - saudacao: True  # Só confirma se o slot 'name' foi setado
+      # - action: action_listen  # Escuta por mais input
+
+  - rule: Save preferencias
+    steps:
+      - intent: escolha_preferencias
+      - action: action_save_preferencias
+      - slot_was_set:
+        - saudacao: True  # Só confirma se o slot 'name' foi setado
+      # - action: action_listen  # Escuta por mais input
+
+  - rule: Checkup
+    steps:
+      - intent: intro_checkup
+      - action: action_intro_checkup
+
+  - rule: Save dor
+    steps:
+      - intent: ask_dor
+      - action: action_save_pain
+      - action: action_listen  # Escuta por mais input
+
+  - rule: Save alimentacao
+    steps:
+      - intent: ask_alimentation
+      - action: action_save_alimentation
+      - action: action_listen  # Escuta por mais input
+
+  - rule: Save emocao
+    steps:
+      - intent: ask_emotion
+      - action: action_save_emotion
+
+
+  - rule: Ir para a cozinha
+    steps:
+      - intent: ir_para_cozinha
+      - action: action_ir_para_cozinha  
+
+  - rule: Emergency
+    steps:
+    - intent: emergencia
+    - action: action_emergencia
+
+

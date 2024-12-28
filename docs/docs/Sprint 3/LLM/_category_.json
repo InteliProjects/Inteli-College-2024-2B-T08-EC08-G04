@@ -1,0 +1,8 @@
+{
+    "label": "LLM Chatbot",
+    "position": 1,
+    "link": {
+      "type": "generated-index",
+      "description": "Estrutura de como estamos montando o LLM com chatbot"
+    }
+  }

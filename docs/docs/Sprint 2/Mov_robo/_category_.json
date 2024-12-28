@@ -1,0 +1,9 @@
+{
+    "label": "Movimentação do Robô",
+    "position": 2,
+    "link": {
+      "type": "generated-index",
+      "description": "Artefatos da Sprint 2 em relação à movimentação do robô (CLI)"
+    }
+  }
+  
